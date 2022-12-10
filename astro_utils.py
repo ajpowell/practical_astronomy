@@ -1,6 +1,11 @@
 import math
+import datetime
 import astro_constants
 import astro_utils
+
+
+def daysSinceEpoch(year, month, day):
+    return (datetime.datetime(year,month,day) - datetime.datetime(1980,1,1)).days + 1
 
 def alignNumber(n, lim):
     # where n > 360...
@@ -53,10 +58,6 @@ def coords_EclipticToEquatorial(L, B):
 
     Ah = A/15
 
-    # print('------')
-    # print(displayTime(Ah))
-    # print(displayAngle(D))
-
     return (Ah, D)
 
 def displayTime(T):
@@ -66,10 +67,10 @@ def displayTime(T):
 
     return '{:02d}h {:02d}m {:04.1f}s'.format(H, M, S)
 
-def displayAngle(T):
-    H = math.trunc(T) 
-    M = math.trunc((T - H ) * 60)
-    S = (((T - H ) * 60) - M) * 60
+def displayAngle(A):
+    H = math.trunc(A) 
+    M = math.trunc((A - H ) * 60)
+    S = (((A - H ) * 60) - M) * 60
 
     deg = u'\xb0'  # utf code for degree
     return '{}{} {}\' {:.1f}\"'.format(H, deg.encode('utf8'), M, S)

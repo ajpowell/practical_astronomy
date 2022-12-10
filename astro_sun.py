@@ -15,12 +15,10 @@ def positionSun(D):
 
     return (Lc, 0)
 
-def daysSinceEpoch(year, month, day):
-    return (datetime.datetime(year,month,day) - datetime.datetime(1980,1,1)).days + 1
 
 def sunRiseSet(year, month, day, lat, long):
 
-    days = daysSinceEpoch(year, month, day)
+    days = astro_utils.daysSinceEpoch(year, month, day)
 
     Lc1, Bc1 = positionSun(days)
 
@@ -56,34 +54,3 @@ def sunRiseSet(year, month, day, lat, long):
     
 
 
-def main():
-    print('')
-    print('Sun Rise/Set')
-    print('')
-
-    year = 1979
-    month = 9
-    day = 7
-
-    lat = 51.860435
-    long = -1.596303
-
-    sunRiseSet(year, month, day, lat, long)
-    
-    # print(convertLSTtoGST(0.401436, 64.0))
-
-    # convertGSTtoGMT(4.668103, 113, 1980)
-
-    # print('=====================')
-
-    # print((datetime.datetime.utcnow() - datetime.datetime(1980,1,1)).days)
-
-    # print((datetime.datetime(1979,2,26) - datetime.datetime(1980,1,1)).days + 1)
-
-    A,D = astro_utils.coords_EclipticToEquatorial(124.108828, 0)
-
-    print(A)
-    print(D)
-
-if __name__ == "__main__":
-    main()

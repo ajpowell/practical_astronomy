@@ -11,3 +11,9 @@ sun_eccentricity = 0.016718
 sun_angularDiameter = 0.533
 sun_horizontalParallax = 0.00244167  # 8.79 arc seconds
 
+# Moon
+moon_EclipticLongitudeAtEpoch = 64.975464
+moon_EclipticLongitudeOfPerigee = 349.383063
+moon_eccentricity = 0.054900
+moon_NodeLongitudeAtEpoch = 151.950429
+moon_OrbitInclination = 5.145396
