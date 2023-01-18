@@ -17,3 +17,6 @@ moon_EclipticLongitudeOfPerigee = 349.383063
 moon_eccentricity = 0.054900
 moon_NodeLongitudeAtEpoch = 151.950429
 moon_OrbitInclination = 5.145396
+moon_AngularDiameter = 0.5181
+moon_SemiMajorAxis = 384401
+moon_Parallax = 0.9507

@@ -144,3 +144,17 @@ def parallaxCorrection(angularDiameter, horizontalParallax, atmosphericRefractio
     # print(Td)
 
     return Td
+
+def geocentricParallax(lat, h):
+    u = math.degrees(math.atan(0.996647 * math.tan(math.radians(lat))))
+    hc = h / 6378140
+
+    rho_sin_phi = 0.996647 * math.sin(math.radians(u)) + hc * math.sin(math.radians(lat))
+    rho_cos_phi = math.cos(math.radians(u)) + hc * math.cos(math.radians(lat))
+
+    # print('u:          {}'.format(u))
+    # print('hc:         {}'.format(hc))
+    # print('rho_sin_phi:{}'.format(rho_sin_phi))
+    # print('rho_cos_phi:{}'.format(rho_cos_phi))
+
+    return (rho_sin_phi, rho_cos_phi)

@@ -2,6 +2,7 @@ import math
 import datetime
 # import astro_constants
 import astro_utils
+import astro_moon
 
 def test_alignNumber():
     assert(astro_utils.alignNumber(180, 360) == 180)
@@ -38,3 +39,14 @@ def test_convertLSTtoGST():
 
 def test_convertGSTtoGMT():
     assert(round(astro_utils.convertGSTtoGMT(4.668103, 113, 1980), 6) == 14.614361)
+
+def test_geocentricParallax():
+    rho_sin_phi, rho_cos_phi = astro_utils.geocentricParallax(50.0, 60.0)
+
+    assert(round(rho_sin_phi, 6) == 0.762422)
+    assert(round(rho_cos_phi, 6) == 0.644060)
+
+def test_distanceMoon():
+    Pc = astro_moon.distanceMoon(-359.735278, 0.029055)
+
+    assert(round(Pc, 6) == 0.945101)

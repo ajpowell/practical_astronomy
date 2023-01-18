@@ -1,9 +1,18 @@
+import logging
 import math
 import datetime
 import astro_constants
 import astro_utils
 import astro_sun
 
+# Initialise logging module
+logging.root.handlers = []
+logging.basicConfig(
+    format='%(asctime)s %(levelname)-8s %(message)s',
+    # datefmt='%Y-%m-%d %H:%M:%S',
+    level=logging.INFO
+    # level=logging.DEBUG
+    )
 
 def main():
     print('')
